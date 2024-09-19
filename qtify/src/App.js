@@ -1,22 +1,22 @@
+import Home from './Home';
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
-import Navbar from './components/Navbar/Navbar';
-import { useTheme } from '@mui/material/styles';
-import Hero from './components/Hero/Hero';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import routing components
+
+export const config = {
+  endpoint: `https://qtify-backend-labs.crio.do/albums/top`,
+};
 
 function App() {
-  const theme = useTheme();
-  const appStyle = {
-    backgroundColor: theme.palette.primary.main,
-  };
+  
+  
   return (
     
-      <div styles={appStyle} className="App">
-        <header className="App-header">
-          <Navbar />
-        </header>
-        < Hero/>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Home page route */}
+        
+        {/* Add more routes here as needed */}
+      </Routes>
+  
     
   );
 }
