@@ -6,6 +6,7 @@
     border-bottom-right-radius: 0px;
     border: 1px solid var(--color-black);
     width: 502px;
+    font-family: var(--font-family);
   }
   
   .wrapper {
@@ -17,13 +18,14 @@
   .searchButton {
     border-radius: 0px 8px 8px 0px;
     padding: 14px 20px;
-    height: 45px;
+    height: 49px;
     border: 1px solid var(--color-black);
     border-left: none;
     cursor: pointer;
     display: flex;
     align-items: center;
    justify-content: center;
+
    
   }
   
