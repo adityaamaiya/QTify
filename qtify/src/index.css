@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Define your CSS variables here */
+:root {
+  --color-primary: #34C94B; /* Green color */
+  --color-black: #121212; /* Black background */
+  --color-text: #ffffff; /* White text color */
+  --font-family: 'Poppins', sans-serif; /* Poppins font */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
