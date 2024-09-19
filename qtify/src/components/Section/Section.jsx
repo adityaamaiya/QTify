@@ -6,11 +6,11 @@ import { CircularProgress, Grid } from "@mui/material";
 import { SentimentDissatisfied } from "@mui/icons-material";
 import { Box } from "@mui/system";
 import styles from "./Section.module.css";
-import Card from "../Card/Card"; // Ensure the card component is styled properly
+import Card from "../Card/Card"; 
 import Button from '../Button/Button';
 
-export default function Section({ title, data }) {
-  const [albums, setAlbums] = useState([]);
+export default function Section({ title ,data }) {
+  const [albums, setAlbums] = useState([]);  // Data from API
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const { enqueueSnackbar } = useSnackbar();
@@ -19,8 +19,8 @@ export default function Section({ title, data }) {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get(`${config.endpoint}`);
-      setAlbums(response.data);
+      const response = await axios.get(`${config.endpoint}/${data}`); // Adjust the API endpoint as per the config
+      setAlbums(response.data);  // Store albums data
       return response.data;
     } catch (err) {
       setError(err.response ? err.response.data.message : err.message);
@@ -40,8 +40,8 @@ export default function Section({ title, data }) {
   return (
     <div className={styles.section}>
       <div className={styles.sectionContent}>
-      <p className={styles.title}>{title}</p>
-      <Button> Collapse</Button>
+        <p className={styles.title}>{title}</p>
+        <Button> Collapse</Button>
       </div>
       {loading ? (
         <Box
@@ -51,7 +51,7 @@ export default function Section({ title, data }) {
           minHeight="50vh"
         >
           <CircularProgress />
-          <p>Loading Albums...</p>
+          <p className={styles.title}>Loading Albums...</p>
         </Box>
       ) : error ? (
         <Box
@@ -61,10 +61,10 @@ export default function Section({ title, data }) {
           minHeight="50vh"
         >
           <SentimentDissatisfied />
-          <p>{error}</p>
+          <p className={styles.title}>{error}</p>
         </Box>
       ) : (
-        <Grid container spacing={2} className="album-grid">
+        <Grid container spacing={1} className="album-grid">
           {albums.map((album) => (
             <Grid item xs={6} sm={4} md={2} lg={1.7} key={album.id}>
               <Card

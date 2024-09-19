@@ -12,7 +12,8 @@ function App() {
           <Navbar />
         </header>
         < Hero/>
-        <Section title="Top Albums" />
+        <Section title="Top Albums" data="top"/>
+        <Section title="New Albums" data="new"/>
       </div>
   );
 }

@@ -32,8 +32,8 @@
 }
 
 .chip {
-   
-    padding: 0.40rem;
+    padding-left: 10px;
+    padding-top: 5px;
     display: flex;
     align-items: center;
     z-index: 1;

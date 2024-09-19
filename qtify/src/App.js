@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import routing components
 
 export const config = {
-  endpoint: `https://qtify-backend-labs.crio.do/albums/top`,
+  endpoint: `https://qtify-backend-labs.crio.do/albums/`,
 };
 
 function App() {

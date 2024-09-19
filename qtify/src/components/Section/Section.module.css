@@ -2,6 +2,7 @@
     background-color: var(--color-black);
     margin: 0;
     padding: 10px;
+    overflow: hidden;
 }
 
 .album-grid {
