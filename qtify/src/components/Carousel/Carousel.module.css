@@ -1,0 +1,38 @@
+.mySwiper {
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.swiper-slide img {
+  width: 100%; /* Ensure image scales within the card */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Hide Swiper's default navigation arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none !important;
+}
+
+/* Custom navigation button styles */
+.swiperButtonPrev,
+.swiperButtonNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+}
+
+.swiperButtonPrev {
+  left: 10px; /* Adjust positioning */
+}
+
+.swiperButtonNext {
+  right: 10px; /* Adjust positioning */
+}

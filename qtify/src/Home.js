@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import Card from './components/Card/Card';
 import Section from './components/Section/Section';
+import Carousel from './components/Carousel/Carousel';
 
 function App() {
   
@@ -13,7 +13,9 @@ function App() {
         </header>
         < Hero/>
         <Section title="Top Albums" data="top"/>
+        <Carousel />
         <Section title="New Albums" data="new"/>
+        
       </div>
   );
 }

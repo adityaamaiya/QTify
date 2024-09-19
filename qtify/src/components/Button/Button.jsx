@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Button.module.css';
 
-function Button({ children }) {
+function Button({ onClick, children }) {
   return (
-    <button className={`${styles.button}`} >
+    <button className={styles.button} onClick={onClick}>
       {children}
     </button>
   );

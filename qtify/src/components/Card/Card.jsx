@@ -15,7 +15,7 @@ export default function Card({ title, follows, image }) {
               borderRadius: "15px",
             }}
             label={`${follows} Follows`}
-            size="big"
+            size="small"
           />
         </div>
       </div>
