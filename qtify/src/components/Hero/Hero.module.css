@@ -1,12 +1,31 @@
 .hero {
-    background-color: var(--color-black);
-    color: var(--color-text);
-    height: 270px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 30px;
-    font-family: var(--font-family);
+  background-color: var(--color-black);
+  color: var(--color-text);
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  font-family: var(--font-family);
+  padding: 0 20px; /* Add padding to ensure content doesn't touch the edges on smaller screens */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Stack elements vertically */
+    height: auto; /* Allow the height to adjust based on content */
+    gap: 15px; /* Reduce gap between text and image */
+    padding: 20px; /* Add padding for breathing room */
   }
-  
+
+  .hero h1 {
+    font-size: 1.5rem; /* Reduce font size for smaller screens */
+    line-height: 1.2;  /* Adjust line height for better readability */
+  }
+
+  .hero img {
+    width: 150px; /* Reduce image size for mobile */
+  }
+}

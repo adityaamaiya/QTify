@@ -47,7 +47,7 @@ export default function Section({ title, data }) {
       <div className={styles.sectionContent}>
         <p className={styles.title}>{title}</p>
         <Button onClick={handleToggle}>
-          {showCarousel ? "Show All" : "Collapse"}
+        {showCarousel ? "Collapse" : "Show All"}
         </Button>
       </div>
       {loading ? (
