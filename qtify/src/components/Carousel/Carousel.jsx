@@ -19,6 +19,7 @@ const Carousel = ({ slides }) => {
         prevEl: `.${styles.swiperButtonPrev}`,
         nextEl: `.${styles.swiperButtonNext}`,
       }}
+      lazy={true}
       breakpoints={{
         // when window width is >= 640px
         
