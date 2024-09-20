@@ -14,20 +14,29 @@ const Carousel = ({ slides }) => {
   return (
     <Swiper
       slidesPerView={1}
-      spaceBetween={10}
+      spaceBetween={5}
       navigation={{
         prevEl: `.${styles.swiperButtonPrev}`,
         nextEl: `.${styles.swiperButtonNext}`,
       }}
       lazy={true}
       breakpoints={{
-        // when window width is >= 640px
-        
-        640: {
+        // when window width is >= 320px
+        320: {
           slidesPerView: 2,
         },
-        768: {
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 2,
+          
+        },
+        // when window width is >= 640px
+
+        640: {
           slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 4,
         },
         1024: {
           slidesPerView: 5,

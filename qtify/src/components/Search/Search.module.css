@@ -6,8 +6,11 @@
   border-bottom-right-radius: 0px;
   border: 1px solid var(--color-black);
   font-family: var(--font-family);
-  
-  
+  height: 48px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 /* Wrapper for the search input and button */
@@ -15,7 +18,9 @@
   display: flex;
   align-items: center;
   height: 48px;
-  
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--color-primary);
 }
 
 /* Search button styling */
@@ -28,6 +33,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 48px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* For desktop */
@@ -39,14 +47,16 @@
 /* For mobile */
 .wrappermobile {
   display: flex; /* Flex layout for mobile */
-  width: 100%;
+  
 }
 
 .searchMobile{
-  width: 100%;
+  width: 100%; /* Full width for mobile */;
+  
 }
 .searchDesktop{
   width: 400px; /* Specific width for larger screens */
+ 
 }
 
 /* Show desktop search on screens wider than 768px */

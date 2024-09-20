@@ -67,7 +67,7 @@ function Search({ searchData, placeholder,type ,isMobile}) {
           onSubmit(e, value);
         }}
       >
-        <div {...getRootProps()}>
+        <div style={{display:"flex",width:"100%"}} {...getRootProps()}>
           {isMobile ? (
             <input
             name="album"
@@ -86,7 +86,7 @@ function Search({ searchData, placeholder,type ,isMobile}) {
           />
           )}
         </div>
-        <div>
+        <div style={{display:"flex"}}>
           <button className={styles.searchButton} type="submit">
             <SearchIcon />
           </button>

@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { config } from "../../App";
 import { useSnackbar } from "notistack";
 import axios from "axios";
-import { CircularProgress, Grid, Button as MUIButton } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 import { SentimentDissatisfied } from "@mui/icons-material";
-import { Box } from "@mui/system";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel"; // Adjust import path as needed
 import Button from "../Button/Button";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+
 
 export default function Section({ title, data, showButton }) {
   const [albums, setAlbums] = useState([]);  // Data from API
@@ -52,6 +55,10 @@ export default function Section({ title, data, showButton }) {
           </Button>
         )}
       </div>
+
+      {/* Albums section */}
+      
+
       {loading ? (
         <Box display="flex" alignItems="center" justifyContent="center" minHeight="50vh">
           <CircularProgress />
