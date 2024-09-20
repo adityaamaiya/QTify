@@ -2,7 +2,7 @@ import Chip from "@mui/material/Chip";
 
 import styles from "./Card.module.css";
 
-export default function Card({ title, follows, image }) {
+export default function Card({ title, follows, likes, image, type }) {
   return (
     <div className={styles.card}>
       <div className={styles.cardContent}>
@@ -14,7 +14,7 @@ export default function Card({ title, follows, image }) {
               color: "var(--color-text)",
               borderRadius: "15px",
             }}
-            label={`${follows} Follows`}
+            label={type === "album" ? `${follows} Follows` : `${likes} Likes`}
             size="small"
           />
         </div>
@@ -23,3 +23,4 @@ export default function Card({ title, follows, image }) {
     </div>
   );
 }
+

@@ -36,7 +36,7 @@ const Listbox = styled("ul")(({ theme }) => ({
   },
 }));
 
-function Search({ searchData, placeholder }) {
+function Search({ searchData, placeholder,type ,isMobile}) {
   const {
     getRootProps,
     getInputLabelProps,
@@ -62,19 +62,29 @@ function Search({ searchData, placeholder }) {
   return (
     <div style={{ position: "relative" }}>
       <form
-        className={styles.wrapper}
+         className={`${styles.wrapper} ${styles[type]}`}
         onSubmit={(e) => {
           onSubmit(e, value);
         }}
       >
         <div {...getRootProps()}>
-          <input
+          {isMobile ? (
+            <input
             name="album"
-            className={styles.search}
+            className={`${styles.search} ${styles.searchMobile}`}
             placeholder={placeholder}
             required
             {...getInputProps()}
           />
+          ):(
+            <input
+            name="album"
+            className={`${styles.search} ${styles.searchDesktop}`}
+            placeholder={placeholder}
+            required
+            {...getInputProps()}
+          />
+          )}
         </div>
         <div>
           <button className={styles.searchButton} type="submit">

@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import LeftArrow from '../Arrows/Left'; // Import your custom SVG component
-import RightArrow from '../Arrows/Right'; // Import your custom SVG component
-import styles from './Carousel.module.css';
+import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import LeftArrow from "../Arrows/Left"; // Import your custom SVG component
+import RightArrow from "../Arrows/Right"; // Import your custom SVG component
+import styles from "./Carousel.module.css";
 
 const Carousel = ({ slides }) => {
   const slideItems = Array.isArray(slides) ? slides : [];
@@ -20,6 +20,8 @@ const Carousel = ({ slides }) => {
         nextEl: `.${styles.swiperButtonNext}`,
       }}
       breakpoints={{
+        // when window width is >= 640px
+        
         640: {
           slidesPerView: 2,
         },

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 10px;
     overflow: hidden;
+    border-bottom: 1px solid var(--color-primary);
 }
 
 .album-grid {
@@ -27,5 +28,8 @@
     width: 100%; /* Take full width */
     margin: 0; /* Remove any additional margins */
     overflow: hidden;
+}
+.button{
+    display: none;
 }
 

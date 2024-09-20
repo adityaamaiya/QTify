@@ -9,6 +9,7 @@ import Search from '../Search/Search';
 function Navbar({ searchData }) {
 
   return (
+    <>
     <nav  className={styles.navbar}>
       <Link to="/">
         <Logo />
@@ -16,9 +17,20 @@ function Navbar({ searchData }) {
       <Search
         placeholder="Search a song of your choice"
         searchData={searchData}
+        type="wrapperdesktop"
+        isMobile={false}
       />
       <Button >Give Feedback</Button>
+      
     </nav>
+    <Search
+    placeholder="Search a song of your choice"
+    searchData={searchData}
+    type="wrappermobile"
+    isMobile={true}
+  />
+    </>
+    
   );
 }
 

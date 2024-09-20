@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
+  
 }
 
 .cardContent {
@@ -16,6 +17,7 @@
   background-color: var(--color-text);
   border-radius: 10px;
   width: 100%;
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .cardImage {
@@ -37,4 +39,18 @@
   display: flex;
   align-items: center;
   z-index: 1;
+}
+.cardMedia {
+  filter: brightness(60%);
+  transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for all effects */
+}
+
+.cardMedia:hover {
+  filter: brightness(100%);
+ 
+}
+
+.cardContent:hover{
+  transform: scale(1.05); 
+  box-shadow: 0 0 15px 0px var(--color-primary); 
 }

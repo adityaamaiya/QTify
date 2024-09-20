@@ -10,11 +10,11 @@ import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel"; // Adjust import path as needed
 import Button from "../Button/Button";
 
-export default function Section({ title, data }) {
+export default function Section({ title, data, showButton }) {
   const [albums, setAlbums] = useState([]);  // Data from API
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [showCarousel, setShowCarousel] = useState(false); // State to toggle between Grid and Carousel
+  const [showCarousel, setShowCarousel] = useState(true); // State to toggle between Grid and Carousel
   const { enqueueSnackbar } = useSnackbar();
 
   const performAPICall = async () => {
@@ -46,54 +46,64 @@ export default function Section({ title, data }) {
     <div className={styles.section}>
       <div className={styles.sectionContent}>
         <p className={styles.title}>{title}</p>
-        <Button onClick={handleToggle}>
-        {showCarousel ? "Show All" : "Collapse"}
-        </Button>
+        {showButton && showButton && ( // Show button only for albums
+          <Button onClick={handleToggle}>
+            {showCarousel ? "Show All" : "Collapse"}
+          </Button>
+        )}
       </div>
       {loading ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
+        <Box display="flex" alignItems="center" justifyContent="center" minHeight="50vh">
           <CircularProgress />
           <p className={styles.title}> Loading Albums...</p>
         </Box>
       ) : error ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
+        <Box display="flex" alignItems="center" justifyContent="center" minHeight="50vh">
           <SentimentDissatisfied />
           <p className={styles.title}> {error}</p>
         </Box>
       ) : (
-        showCarousel ? (
-          <Carousel slides={albums.map(album => (
-            <Card
-              title={album.title}
-              follows={album.follows}
-              image={album.image}
-              key={album.id}
-            />
-          ))} />
-        ) : (
-          <Grid container spacing={1} className="album-grid">
-            {albums.map((album) => (
-              <Grid item xs={6} sm={4} md={2} lg={1.7} key={album.id}>
+        <>
+          {showButton ? (
+            // Albums section with Carousel and toggle button
+            showCarousel ? (
+              <Carousel slides={albums.map(album => (
                 <Card
                   title={album.title}
                   follows={album.follows}
                   image={album.image}
+                  key={album.id}
+                  type="album"
                 />
+              ))} />
+            ) : (
+              <Grid container spacing={1} className="album-grid">
+                {albums.map(album => (
+                  <Grid item xs={6} sm={4} md={2} lg={1.7} key={album.id}>
+                    <Card
+                      title={album.title}
+                      follows={album.follows}
+                      image={album.image}
+                      type="album"
+                    />
+                  </Grid>
+                ))}
               </Grid>
-            ))}
-          </Grid>
-        )
+            )
+          ) : ( // Songs section with Carousel only
+            <Carousel slides={albums.map(song => (
+              <Card
+                title={song.title}
+                likes={song.likes}
+                image={song.image}
+                key={song.id}
+                type="song"
+              />
+            ))} />
+          )}
+        </>
       )}
     </div>
   );
+  
 }

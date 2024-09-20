@@ -1,31 +1,63 @@
+/* General search input styling */
 .search {
   padding: 14px 20px;
   border-radius: 8px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border: 1px solid var(--color-black);
-  width: 502px;
   font-family: var(--font-family);
+  
+  
 }
 
 /* Wrapper for the search input and button */
 .wrapper {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   height: 48px;
+  
 }
 
 /* Search button styling */
 .searchButton {
   border-radius: 0px 8px 8px 0px;
   padding: 14px 20px;
-  height: 49px;
   border: 1px solid var(--color-black);
   border-left: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* For desktop */
+.wrapperdesktop {
+  display: none; /* Default is hidden */
+  
+}
+
+/* For mobile */
+.wrappermobile {
+  display: flex; /* Flex layout for mobile */
+  width: 100%;
+}
+
+.searchMobile{
+  width: 100%;
+}
+.searchDesktop{
+  width: 400px; /* Specific width for larger screens */
+}
+
+/* Show desktop search on screens wider than 768px */
+@media screen and (min-width: 768px) {
+  .wrapperdesktop {
+    display: flex; /* Show desktop search on larger screens */
+  }
+
+  .wrappermobile {
+    display: none; /* Hide mobile search on larger screens */
+  }
 }
 
 /* List element styling */
@@ -43,23 +75,4 @@
 /* Album artists */
 .albumArtists {
   font-size: 12px;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  .search {
-    width: 100%; /* Make search input take the full width */
-  }
-
-  .wrapper {
-    flex-direction: column; /* Stack input and button vertically */
-    width: 100%; /* Make the wrapper full width */
-    align-items: center;
-  }
-
-  .searchButton {
-    width: 100%; /* Button will take full width on smaller screens */
-    border-radius: 8px; /* Adjust border radius */
-    margin-top: 10px; /* Add margin to separate button from input */
-  }
 }
