@@ -65,7 +65,7 @@ const Carousel = ({ albums ,type}) => {
           </SwiperSlide>
         ))
       ) : (
-        <p>No Songs available 😢</p>
+        <p>No {type} available 😢</p>
       )}
       <div className={styles.swiperButtonPrev}>
         <LeftArrow />
