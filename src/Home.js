@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
 import Faq from "./components/Faq/Faq";
+import Player from "./components/Player/Player";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Section title="New Albums" data="/albums/new" showButton={true} />
       <Section title="Songs" data="/songs" showButton={false} />
       <Faq data="/faq" />
+      {/* <Player /> */}
     </div>
   );
 }

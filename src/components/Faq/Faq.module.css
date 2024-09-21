@@ -31,6 +31,11 @@
   padding: 20px 30px !important;
 }
 
+hr {
+  margin: 10px 0px;
+  box-shadow: 0px -5px 10px 2px rgba(255, 255, 255, 0.3);
+}
+
 @media screen and (min-width: 768px) {
   .Accordion {
     width: 950px !important;

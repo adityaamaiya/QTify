@@ -34,6 +34,7 @@ export default function Faq({ data }) {
   }, []); // Empty array so it runs only once when the component mounts
 
   return (
+    <>
     <div className={styles.faq}>
       <h1>FAQs</h1>
       {faqs.map((faq, index) => (
@@ -58,5 +59,7 @@ export default function Faq({ data }) {
         </div>
       ))}
     </div>
+    <hr color="grey" />
+    </>
   );
 }
