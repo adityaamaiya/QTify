@@ -8,6 +8,7 @@
   height: 46px;
   font-family: var(--font-family);
   cursor: pointer;
+  font-size: medium;
 }
 
 .button:hover {
