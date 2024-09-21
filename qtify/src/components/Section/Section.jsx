@@ -82,7 +82,27 @@ export default function Section({ title, data, showButton }) {
         )
       ) : null}
 
-      {!showButton && <ColorTabs songs={albums} type="songs" />}
+      {!showButton && loading ? (
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          minHeight="50vh"
+        >
+          <CircularProgress />
+          <p className={styles.title}> Loading Songs...</p>
+        </Box>
+      ) : error ? (
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          minHeight="50vh"
+        >
+          <SentimentDissatisfied />
+          <p className={styles.title}> {error}</p>
+        </Box>
+      ) : <ColorTabs songs={albums} type="songs" />}
     </div>
   );
 }
