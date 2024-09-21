@@ -6,13 +6,13 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#34C94B',  // Green color
+      main: "#34C94B", // Green color
     },
     background: {
-      default: '#121212', // black as the default background
+      default: "#121212", // black as the default background
     },
     text: {
-      primary: '#ffffff', // white text color
+      primary: "#ffffff", // white text color
     },
   },
 });

@@ -27,7 +27,6 @@
   transform: translateY(-50%);
   cursor: pointer;
   z-index: 10;
-  
 }
 
 .swiperButtonPrev {
@@ -37,4 +36,3 @@
 .swiperButtonNext {
   right: 10px; /* Adjust positioning */
 }
-

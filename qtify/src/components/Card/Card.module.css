@@ -8,7 +8,6 @@
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
-  
 }
 
 .cardContent {
@@ -47,10 +46,9 @@
 
 .cardMedia:hover {
   filter: brightness(100%);
- 
 }
 
-.cardContent:hover{
-  transform: scale(1.05); 
-  box-shadow: 0 0 15px 0px var(--color-primary); 
+.cardContent:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 0px var(--color-primary);
 }

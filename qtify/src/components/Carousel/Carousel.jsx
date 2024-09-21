@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types"; // Import PropTypes
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,9 +7,13 @@ import { Navigation } from "swiper/modules";
 import LeftArrow from "../Arrows/Left"; // Import your custom SVG component
 import RightArrow from "../Arrows/Right"; // Import your custom SVG component
 import styles from "./Carousel.module.css";
+import Card from "../Card/Card";
 
-const Carousel = ({ slides }) => {
-  const slideItems = Array.isArray(slides) ? slides : [];
+const Carousel = ({ albums }) => {
+  // const slideItems = Array.isArray(slides) ? slides : [];
+  useEffect(() => {
+    console.log(albums);
+  }, []);
 
   return (
     <Swiper
@@ -19,7 +23,7 @@ const Carousel = ({ slides }) => {
         prevEl: `.${styles.swiperButtonPrev}`,
         nextEl: `.${styles.swiperButtonNext}`,
       }}
-      lazy={true}
+      lazy="true"
       breakpoints={{
         // when window width is >= 320px
         320: {
@@ -28,7 +32,6 @@ const Carousel = ({ slides }) => {
         // when window width is >= 480px
         480: {
           slidesPerView: 2,
-          
         },
         // when window width is >= 640px
 
@@ -48,11 +51,21 @@ const Carousel = ({ slides }) => {
       modules={[Navigation]}
       className={styles.mySwiper}
     >
-      {slideItems.map((slide, index) => (
-        <SwiperSlide key={index} className={styles.slide}>
-          {slide}
-        </SwiperSlide>
-      ))}
+      {albums && albums.length > 0 ? (
+        albums.map((album) => (
+          <SwiperSlide key={album.id}>
+            <Card
+              title={album.title}
+              follows={album.follows}
+              image={album.image}
+              key={album.id}
+              type="album"
+            />
+          </SwiperSlide>
+        ))
+      ) : (
+        <p>No Albums available 😢</p>
+      )}
       <div className={styles.swiperButtonPrev}>
         <LeftArrow />
       </div>
@@ -64,8 +77,8 @@ const Carousel = ({ slides }) => {
 };
 
 // Add PropTypes validation
-Carousel.propTypes = {
-  slides: PropTypes.arrayOf(PropTypes.node).isRequired,
-};
+// Carousel.propTypes = {
+//   albums: PropTypes.arrayOf(PropTypes.node).isRequired,
+// };
 
 export default Carousel;

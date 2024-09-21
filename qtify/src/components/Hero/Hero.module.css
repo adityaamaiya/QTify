@@ -22,7 +22,7 @@
 
   .hero h1 {
     font-size: 1.5rem; /* Reduce font size for smaller screens */
-    line-height: 1.2;  /* Adjust line height for better readability */
+    line-height: 1.2; /* Adjust line height for better readability */
   }
 
   .hero img {

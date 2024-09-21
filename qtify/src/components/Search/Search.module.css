@@ -41,22 +41,18 @@
 /* For desktop */
 .wrapperdesktop {
   display: none; /* Default is hidden */
-  
 }
 
 /* For mobile */
 .wrappermobile {
   display: flex; /* Flex layout for mobile */
-  
 }
 
-.searchMobile{
-  width: 100%; /* Full width for mobile */;
-  
+.searchMobile {
+  width: 100%; /* Full width for mobile */
 }
-.searchDesktop{
+.searchDesktop {
   width: 400px; /* Specific width for larger screens */
- 
 }
 
 /* Show desktop search on screens wider than 768px */

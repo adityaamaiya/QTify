@@ -23,4 +23,3 @@ export default function Card({ title, follows, likes, image, type }) {
     </div>
   );
 }
-

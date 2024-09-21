@@ -1,4 +1,3 @@
-
 import LogoImage from "../../assets/logo.svg";
 
 export default function Logo() {

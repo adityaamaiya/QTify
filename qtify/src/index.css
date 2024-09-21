@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 /* Define your CSS variables here */
 :root {
-  --color-primary: #34C94B; /* Green color */
+  --color-primary: #34c94b; /* Green color */
   --color-black: #121212; /* Black background */
   --color-text: #ffffff; /* White text color */
-  --font-family: 'Poppins', sans-serif; /* Poppins font */
+  --font-family: "Poppins", sans-serif; /* Poppins font */
 }
 
 body {

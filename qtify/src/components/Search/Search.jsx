@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Search.module.css";
 import { Search as SearchIcon } from "@mui/icons-material";
-import { useAutocomplete } from '@mui/base/useAutocomplete';
+import { useAutocomplete } from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import { truncate } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ const Listbox = styled("ul")(({ theme }) => ({
   },
 }));
 
-function Search({ searchData, placeholder,type ,isMobile}) {
+function Search({ searchData, placeholder, type, isMobile }) {
   const {
     getRootProps,
     getInputLabelProps,
@@ -62,31 +62,31 @@ function Search({ searchData, placeholder,type ,isMobile}) {
   return (
     <div style={{ position: "relative" }}>
       <form
-         className={`${styles.wrapper} ${styles[type]}`}
+        className={`${styles.wrapper} ${styles[type]}`}
         onSubmit={(e) => {
           onSubmit(e, value);
         }}
       >
-        <div style={{display:"flex",width:"100%"}} {...getRootProps()}>
+        <div style={{ display: "flex", width: "100%" }} {...getRootProps()}>
           {isMobile ? (
             <input
-            name="album"
-            className={`${styles.search} ${styles.searchMobile}`}
-            placeholder={placeholder}
-            required
-            {...getInputProps()}
-          />
-          ):(
+              name="album"
+              className={`${styles.search} ${styles.searchMobile}`}
+              placeholder={placeholder}
+              required
+              {...getInputProps()}
+            />
+          ) : (
             <input
-            name="album"
-            className={`${styles.search} ${styles.searchDesktop}`}
-            placeholder={placeholder}
-            required
-            {...getInputProps()}
-          />
+              name="album"
+              className={`${styles.search} ${styles.searchDesktop}`}
+              placeholder={placeholder}
+              required
+              {...getInputProps()}
+            />
           )}
         </div>
-        <div style={{display:"flex"}}>
+        <div style={{ display: "flex" }}>
           <button className={styles.searchButton} type="submit">
             <SearchIcon />
           </button>
