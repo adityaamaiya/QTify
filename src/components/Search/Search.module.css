@@ -36,15 +36,15 @@
   height: 48px;
   box-sizing: border-box;
   flex-shrink: 0;
-  -webkit-appearance: none; /* Disables default button appearance in iOS */
-  appearance: none;
-  outline: none; /* Removes the blue outline */
+  -webkit-appearance: none !important; /* Disables default button appearance in iOS */
+  appearance: none !important;
+  outline: none !important; /* Removes the blue outline */
 }
 .search:focus {
-  outline: none; /* Prevents outline on focus in iOS */
+  outline: none !important; /* Prevents outline on focus in iOS */
 }
 .searchButton:focus {
-  outline: none; /* Prevents outline on focus in iOS */
+  outline: none !important; /* Prevents outline on focus in iOS */
 }
 
 /* For desktop */

@@ -2,7 +2,7 @@ import React from "react";
 
 import styles from "./Navbar.module.css";
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
+import Modal from "../Modal/Modal";
 import Logo from "../Logo/Logo";
 import Search from "../Search/Search";
 
@@ -19,7 +19,7 @@ function Navbar({ searchData }) {
           type="wrapperdesktop"
           isMobile={false}
         />
-        <Button>Give Feedback</Button>
+        <Modal />
       </nav>
       <Search
         placeholder="Search a song of your choice"
