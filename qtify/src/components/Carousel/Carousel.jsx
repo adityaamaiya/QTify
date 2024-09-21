@@ -54,14 +54,7 @@ const Carousel = ({ albums, type }) => {
       {albums && albums.length > 0 ? (
         albums.map((album) => (
           <SwiperSlide key={album.id}>
-            <Card
-              title={album.title}
-              follows={album.follows}
-              likes={album.likes}
-              image={album.image}
-              key={album.id}
-              type={type}
-            />
+            <Card cardData={album} type={type} loading="lazy" />
           </SwiperSlide>
         ))
       ) : (

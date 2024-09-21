@@ -10,9 +10,7 @@ export default function GridComponent({ items, type }) {
         {items.map((item) => (
           <Grid item xs={6} sm={4} md={2} lg={1.7} key={item.id}>
             <Card
-              title={item.title}
-              follows={item.follows} // Handle follows or likes depending on type
-              image={item.image}
+              cardData={item}
               type={type} // Type to differentiate between "album" and "song"
             />
           </Grid>
