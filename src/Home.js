@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
-import Carousel from "./components/Carousel/Carousel";
+import Faq from "./components/Faq/Faq";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <Section title="Top Albums" data="/albums/top" showButton={true} />
       <Section title="New Albums" data="/albums/new" showButton={true} />
       <Section title="Songs" data="/songs" showButton={false} />
+      <Faq data="/faq" />
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+.Accordion {
+  margin-bottom: 20px !important;
+  border-radius: 8px !important;
+  width: 300px !important;
+
+  align-items: center !important;
+  border: 2px solid var(--color-text) !important ;
+
+  color: var(--color-text) !important;
+  overflow: hidden;
+}
+
+.AccordionSummary {
+  color: var(--color-text) !important;
+  background-color: var(--color-black) !important;
+  border-radius: 8px !important;
+  padding: 10px 30px !important;
+}
+.AccordionDetails {
+  color: var(--color-black) !important;
+  background-color: var(--color-text) !important;
+  padding: 20px 30px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .Accordion {
+    width: 950px !important;
+  }
+}
