@@ -24,6 +24,7 @@ const Carousel = ({ albums, type }) => {
         nextEl: `.${styles.swiperButtonNext}`,
       }}
       lazy="true"
+      allowTouchMove={true}
       breakpoints={{
         // when window width is >= 320px
         320: {
