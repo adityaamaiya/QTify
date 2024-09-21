@@ -9,7 +9,7 @@ import RightArrow from "../Arrows/Right"; // Import your custom SVG component
 import styles from "./Carousel.module.css";
 import Card from "../Card/Card";
 
-const Carousel = ({ albums }) => {
+const Carousel = ({ albums ,type}) => {
   // const slideItems = Array.isArray(slides) ? slides : [];
   useEffect(() => {
     console.log(albums);
@@ -57,14 +57,15 @@ const Carousel = ({ albums }) => {
             <Card
               title={album.title}
               follows={album.follows}
+              likes={album.likes}
               image={album.image}
               key={album.id}
-              type="album"
+              type={type}
             />
           </SwiperSlide>
         ))
       ) : (
-        <p>No Albums available 😢</p>
+        <p>No Songs available 😢</p>
       )}
       <div className={styles.swiperButtonPrev}>
         <LeftArrow />

@@ -62,7 +62,7 @@ export default function Section({ title, data, showButton }) {
           minHeight="50vh"
         >
           <CircularProgress />
-          <p className={styles.title}> Loading...</p>
+          <p className={styles.title}> Loading Albums...</p>
         </Box>
       ) : error ? (
         <Box
@@ -76,13 +76,13 @@ export default function Section({ title, data, showButton }) {
         </Box>
       ) : showButton ? (
         showCarousel ? (
-          <Carousel albums={albums} /> /* Pass albums as props to Carousel */
+          <Carousel albums={albums} type="album"/> /* Pass albums as props to Carousel */
         ) : (
           <Grid items={albums} type="album" /> // Use GridComponent for grid view
         )
       ) : null}
 
-      {!showButton && <ColorTabs songs={albums} />}
+      {!showButton && <ColorTabs songs={albums} type="songs" />}
     </div>
   );
 }
