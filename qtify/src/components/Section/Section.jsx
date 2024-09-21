@@ -76,7 +76,10 @@ export default function Section({ title, data, showButton }) {
         </Box>
       ) : showButton ? (
         showCarousel ? (
-          <Carousel albums={albums} type="album"/> /* Pass albums as props to Carousel */
+          <Carousel
+            albums={albums}
+            type="album"
+          /> /* Pass albums as props to Carousel */
         ) : (
           <Grid items={albums} type="album" /> // Use GridComponent for grid view
         )
@@ -102,7 +105,9 @@ export default function Section({ title, data, showButton }) {
           <SentimentDissatisfied />
           <p className={styles.title}> {error}</p>
         </Box>
-      ) : <ColorTabs songs={albums} type="songs" />}
+      ) : (
+        <ColorTabs songs={albums} type="songs" />
+      )}
     </div>
   );
 }
