@@ -11,7 +11,6 @@ function App() {
       </header>
       <Hero />
       <Section title="Top Albums" data="/albums/top" showButton={true} />
-
       <Section title="New Albums" data="/albums/new" showButton={true} />
       <Section title="Songs" data="/songs" showButton={false} />
     </div>

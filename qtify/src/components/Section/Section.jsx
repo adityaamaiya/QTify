@@ -18,6 +18,7 @@ export default function Section({ title, data, showButton }) {
   const [showCarousel, setShowCarousel] = useState(true); // Toggle state for Grid and Carousel
   const { enqueueSnackbar } = useSnackbar();
 
+  // API call function
   const performAPICall = async () => {
     setLoading(true);
     setError(null);
@@ -37,11 +38,40 @@ export default function Section({ title, data, showButton }) {
 
   useEffect(() => {
     performAPICall();
-  }, []);
+  }, [data]);
 
   const handleToggle = () => {
-    setShowCarousel(!showCarousel);
+    setShowCarousel((prev) => !prev);
   };
+
+  // Loading and error handling
+  if (loading) {
+    return (
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        minHeight="50vh"
+      >
+        <CircularProgress />
+        <p className={styles.title}>Loading {title}...</p>
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        minHeight="50vh"
+      >
+        <SentimentDissatisfied />
+        <p className={styles.title}>{error}</p>
+      </Box>
+    );
+  }
 
   return (
     <div className={styles.section}>
@@ -54,57 +84,15 @@ export default function Section({ title, data, showButton }) {
         )}
       </div>
 
-      {loading ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
-          <CircularProgress />
-          <p className={styles.title}> Loading Albums...</p>
-        </Box>
-      ) : error ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
-          <SentimentDissatisfied />
-          <p className={styles.title}> {error}</p>
-        </Box>
-      ) : showButton ? (
+      {showButton ? (
         showCarousel ? (
           <Carousel
             albums={albums}
             type="album"
-          /> /* Pass albums as props to Carousel */
+          /> /* Pass albums to Carousel */
         ) : (
-          <Grid items={albums} type="album" /> // Use GridComponent for grid view
+          <Grid items={albums} type="album" /> // Grid view
         )
-      ) : null}
-
-      {!showButton && loading ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
-          <CircularProgress />
-          <p className={styles.title}> Loading Songs...</p>
-        </Box>
-      ) : error ? (
-        <Box
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          minHeight="50vh"
-        >
-          <SentimentDissatisfied />
-          <p className={styles.title}> {error}</p>
-        </Box>
       ) : (
         <ColorTabs songs={albums} type="songs" />
       )}

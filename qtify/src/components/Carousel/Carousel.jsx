@@ -9,7 +9,7 @@ import RightArrow from "../Arrows/Right"; // Import your custom SVG component
 import styles from "./Carousel.module.css";
 import Card from "../Card/Card";
 
-const Carousel = ({ albums ,type}) => {
+const Carousel = ({ albums, type }) => {
   // const slideItems = Array.isArray(slides) ? slides : [];
   useEffect(() => {
     console.log(albums);
